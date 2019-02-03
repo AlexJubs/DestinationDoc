@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+<head>
+	<!-- Angular Ting -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="text.css">
+</head>
+
+<body>
+
+<div class="jumbotron">
+	  <div class="display-4" style='text-align: center;'>
+	  	<p>Hello there</p>
+	  	<p>What's bothering you? tell us how you're feeling</p>
+	 </div>
+
+	  <hr class="my-4"> 
+	  <p style="text-align: center;">We'll use our Software to help you</p>
+
+	 <div style="padding: 10px 10px; text-align: center;">
+	  	<textarea rows="3" cols="50" id="text" ng-model="text"></textarea>
+	</div>
+
+		<div style="text-align: center;">
+		  <button class="btn btn-primary btn-lg" href="#" ng-click="myFunc()" role="button" ng-click="myFunc()">Submit</button>
+		</div>
+
+<div id="reply" style="text-align: center;" class="jumbotron">
+	<p>{{reply}}</p>
+</div>
+
+<div class="footer">
+  <p>Made by Parth Sareen, Kathrine VF, Alex Jabbour and Rahul</p>
+  	</footer>
+</div>
+
+<script type="text/javascript">
+
+	angular.module('myApp', [])
+  .controller('myCtrl', ['$scope', function($scope) {
+    $scope.count = 0;
+    $scope.dog = "wagwan shordy"
+
+    $scope.myFunc = function() {
+
+      $scope.count++;
+    	var textArray = $scope.text.split(" ");
+      console.log($scope.count);
+      console.log($scope.text);
+      console.log(textArray);
+
+
+      for(i=0; i < textArray.length; i++) {
+      	if (textArray[i] == "headache" || textArray[i] == "Headache") {
+      		$scope.reply = "Looks like you may need to see a doctor";
+      	}
+        if (textArray[i] == "toothache"){
+      		$scope.reply = "You have a toothache? Looks like you may need to see a dentist";
+      	}
+      	if (textArray[i] == "depression" || textArray[i] == "anxiety" || textArray[i] == "sad" || textArray[i] == "overthinking" || textArray[i] == "motivation"){
+      		$scope.reply = "You're not feeling well? Looks like you may need to see a Psychiatrist";
+      	}
+      	if (textArray[i] == "muscle" || textArray[i] == "sore" || textArray[i] == "muscles" || textArray[i] == "move" || textArray[i] == "pain"){
+      		$scope.reply = "Looks like you may need to see a Physiotherapist";
+      	}
+      }
+    $(document).ready(function(){
+	  $("button").click(function(){
+	    $("#reply").fadeIn(3000);
+	  });
+	});
+
+    };
+  }]);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	</body>
+</html>
