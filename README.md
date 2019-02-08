@@ -1,5 +1,5 @@
 # DestinationDoc
-Created by Kat, Alex, Parth and Rahul as a Hackathon Project for McHacks 6
+Created by Kathrine VF, Alex Jabbour and Parth Sareen as a Hackathon Project for McHacks 6 (Won Microsoft's Prize)
 
 Inspiration:
 
